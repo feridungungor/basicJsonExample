@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ezanvakitleri/model/city_model.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     if (response.statusCode == 200) {
       return (json.decode(response.body) as List).map((tekgonderimap)=>AllCity.fromJson(tekgonderimap)).toList();
     } else {
-      throw Exception("Bağlanamadık : ${response.statusCode}");
+      throw Exception("Önemli değil ama bağlanamadık : ${response.statusCode}");
     }
   }
 
